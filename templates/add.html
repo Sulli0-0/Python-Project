@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h1>Add a New Music Item</h1>
+
+<form method="post" onsubmit="return validateform()">
+    
+    <input type="text" id="title" name="title" required><br><br>
+    <input type="text" id="artist" name="artist" required><br><br>
+    <input type="text" id="album" name="album" required><br><br>
+    <input type="text" id="genre" name="genre" required><br><br>
+    <input type="number" id="rating" name="rating" min="1" max="10" required><br><br>
+    <textarea id="review" name="review" required></textarea><br><br>
+    <button type="submit">Add Item</button>
+</form>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}
