@@ -48,5 +48,9 @@ def delete(index):
         save_items(items)
     return redirect('/items')
 
+@app.route('/fun')
+def fun():
+    return render_template('fun.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

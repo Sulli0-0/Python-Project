@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'MetalFont';
+    src: url('GresickMetal-51LXV.otf');
+}
+
+@keyframes rainbow {
+    0% { background-color: #ff0000; }
+    20% { background-color: #ff7f00; }
+    40% { background-color: #ffff00; }
+    60% { background-color: #00ff00; }
+    80% { background-color: #0000ff; }
+    100% { background-color: #8b00ff; }
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
+}
+
+body{
+    background-image: url('concertbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1{
+    font-family: 'MetalFont', sans-serif;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.desc{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.buttons{
+    background-color: #1a1a1a;
+    padding: 15px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.buttons:hover{
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.buttons:active{
+    transform: scale(0.95);
+}
+
+.funButton{
+    background-size: 400% 400%;
+    animation: rainbow 5s ease infinite;
+    border: none;
+    width: 250px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: #ffffff dotted 2px;
+}
+
+
+.buttons.small{
+    padding: 10px 20px;
+    font-size: 14px;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.formContainer {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+    text-align: left; /
+}
+
+.inputGroup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1db954;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.inputGroup input, 
+.inputGroup textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #1db954;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.videoContainer iframe {
+    border: 3px solid #1db954;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+
+p{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+h2{
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    color: white;
+}

@@ -1,19 +1,38 @@
 {% extends "template.html" %}
 
 {% block content %}
-    <h1>Add a New Music Item</h1>
-
-<form method="post" onsubmit="return validateform()">
+<div class="formContainer">
+    <h1>Add a New Song!</h1>
+    <form method="post" onsubmit="return validateform()">
+        <div class="inputGroup">
+            <label for="title">Song Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="inputGroup">
+            <label for="artist">Artist</label>
+            <input type="text" id="artist" name="artist" required>
+        </div>
+        <div class="inputGroup">
+            <label for="album">Album</label>
+            <input type="text" id="album" name="album" required>
+        </div>
+        <div class="inputGroup">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" required>
+        </div>
+        <div class="inputGroup">
+            <label for="rating">Rating (1-10)</label>
+            <input type="number" id="rating" name="rating" min="1" max="10" required>
+        </div>
+        <div class="inputGroup">
+            <label for="review">Your Review</label>
+            <textarea id="review" name="review" required></textarea>
+        </div>
+        <button type="submit" class="buttons">ADD ITEM</button>
+    </form>
     
-    <input type="text" id="title" name="title" required><br><br>
-    <input type="text" id="artist" name="artist" required><br><br>
-    <input type="text" id="album" name="album" required><br><br>
-    <input type="text" id="genre" name="genre" required><br><br>
-    <input type="number" id="rating" name="rating" min="1" max="10" required><br><br>
-    <textarea id="review" name="review" required></textarea><br><br>
-    <button type="submit">Add Item</button>
-</form>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
-
+    <div class="buttonContainer">
+        <a href="/" class="buttons small">BACK TO HOME</a>
+    </div>
+</div>
 {% endblock %}
