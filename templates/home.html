@@ -3,7 +3,38 @@
 {% block content %}
     <h1>Lucas's Music Reviews</h1>
     <p class = "desc">A collection of my favorite music, WITH REVIEWS!!!!</p>
+    <p class = "desc">Request a song to see your favorite reviewed!</p>
 
+    <div class = "layout">
+        <div class = "bio">
+            <h2>Bio</h2>
+            <p>Hi! My name is Lucas Sullivan. I am currently a 23 year old Software Development student (as of April, 2026).
+                I have a lot of passions in life, but music may be one of the most important to me. Music was always super prevelant
+                in my household growing up, so naturally it is a big part of my life. I currently play the Guitar, and understand tiny 
+                bits of piano. I will listen to anything but my preferred genres are Metal, Hard Rock, Punk, Rock and little bits of Hip-Hop
+                and European Electronic. I will review anything so leave a Request and ill do my best! (bias may or may not apply).
+                The already filled out reviews are a collection of some of my favorite songs! read them and listen, you wont be disappointed
+                in my taste!</p>
+        </div>
+
+        <div class = "requestBoard">
+            <h2>Request a Review</h2>
+            
+            <div class="requestDisplay">
+                {% for req in requests %}
+                    <p class="requestItem">> {{ req }}</p> 
+                {% endfor %}
+            </div>
+
+            <form action="/request" method="post">
+                <div class="inputGroup">
+                    <input type="text" name="requestText" placeholder="Artist Name" required>
+                </div>
+                <button type="submit" class ="buttons smallButton">Submit Request</button>
+            </form>
+        </div>
+    </div> 
+    
     <div class ="buttonContainer">
         <a href = "/items" class="buttons">VIEW ALL REVIEWS</a>
         <a href = "/add" class="buttons">NEW REVIEW</a>
@@ -12,5 +43,4 @@
     <div class ="buttonContainer">
         <a href="/fun" class="buttons funButton">FUN BUTTON</a>
     </div>
-    
 {% endblock %}

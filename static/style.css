@@ -151,3 +151,41 @@ h2{
     margin-top: 20px;
     color: white;
 }
+.layout{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.bio, .requestBoard{
+    flex: 1;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.bio h2, .requestBoard h2{
+    font-family: 'MetalFont', sans-serif;
+    color: #1db954;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin-top: 0;
+}
+
+.requestDisplay{
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1db954;
+}
+.requestItem{
+    color: #1db954;
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: left;
+}

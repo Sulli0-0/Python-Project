@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 import os 
 import json
 
+reviewRequests = []
 app = Flask(__name__)
 app.secret_key = 'secretKey'
 DATAFILE = 'items.json'
@@ -18,7 +19,7 @@ def save_items(items):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', requests=reviewRequests)
 
 @app.route('/items')
 def items():
@@ -51,6 +52,13 @@ def delete(index):
 @app.route('/fun')
 def fun():
     return render_template('fun.html')
+
+@app.route('/request', methods=['POST'])
+def requestReview():
+    newRequest = request.form.get('requestText')
+    if newRequest:
+        reviewRequests.append(newRequest)
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)
