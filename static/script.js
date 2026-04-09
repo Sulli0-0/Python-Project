@@ -1,7 +1,7 @@
 function validateForm() {
-    let name = document.querySelector('input[name="name"]').value;
-    if (name === "") {
-        alert("Name is required");
+    let title = document.querySelector('input[name="title"]').value;
+    if (title === "") {
+        alert("Title is required");
         return false;
     }
     return true;

@@ -3,7 +3,7 @@
 {% block content %}
 <div class="formContainer">
     <h1>Add a New Song!</h1>
-    <form method="post" onsubmit="return validateform()">
+    <form method="post" enctype="multipart/form-data" onsubmit="return validateform()">
         <div class="inputGroup">
             <label for="title">Song Title</label>
             <input type="text" id="title" name="title" required>
@@ -29,6 +29,12 @@
             <textarea id="review" name="review" required></textarea>
         </div>
         <button type="submit" class="buttons">ADD ITEM</button>
+
+        <div class="inputGroup">
+            <label for="albumCover">Album Cover</label>
+            <input type="file" id="albumCover" name="albumCover" accept="image/*">
+        </div>
+
     </form>
     
     <div class="buttonContainer">

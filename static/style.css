@@ -45,6 +45,7 @@ h1{
     justify-content: center;
     margin-top: 30px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .buttons{
@@ -188,4 +189,55 @@ h2{
     font-size: 14px;
     margin: 5px 0;
     text-align: left;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.itemInfo{
+    flex: 1;
+    text-align: left;
+}
+
+.itemInfo h2 .itemInfo p{
+    text-align: left;
+    margin-top: 5px;
+}
+
+.itemImage{
+    margin-left: 20px;
+}
+
+.albumPreview{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #1db954;
+    border-radius: 4px;
+}
+
+.deleteLink{
+    color: #ff4444;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.deleteLink:hover{
+    text-decoration: underline;
+}
+
+.buttonContainer .buttons{
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+    display: inline-block;
 }

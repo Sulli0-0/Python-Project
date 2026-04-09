@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h1>Manage Reviews</h1>
+    <p class="desc">Select a review below to permanently remove it.</p>
+    
+    <div class="layout">
+        <div class="requestBoard" style="flex: 1; max-width: 600px; margin: 0 auto;">
+            <div class="requestDisplay" style="max-height: 400px;">
+                {% for item in items %}
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1db954; padding: 10px 0;">
+                        <span><strong>{{ item.title }}</strong> - {{ item.artist }}</span>
+                        <a href="/delete/{{ loop.index0 }}" class="buttons smallButton" style="background-color: #ff4444; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px;">REMOVE</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonContainer">
+        <a href="/" class="buttons small">BACK TO HOME</a>
+    </div>
+{% endblock %}

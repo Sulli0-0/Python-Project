@@ -3,22 +3,27 @@
 {% block content %}
     <h1>My Music Collection</h1>
     
-{% for item in items %}
+    {% for item in items %}
     <div class="item">
-        <h2>{{ item.title }} - {{ item.artist }}</h2>
-        <p>Album: {{ item.album }}</p>
-        <p>Genre: {{ item.genre }}</p>
-        <p>Rating: {{ item.rating }}/10</p>
-        <p>Review: {{ item.review }}</p>
+        <div class="itemInfo">
+            <h2>{{ item.title }} - {{ item.artist }}</h2>
+            <p><strong>Album:</strong> {{ item.album }}</p>
+            <p><strong>Genre:</strong> {{ item.genre }}</p>
+            <p><strong>Rating:</strong> {{ item.rating }}/10</p>
+            <p><strong>Review:</strong> {{ item.review }}</p>
+            </div>
 
-        <a href="/delete/{{ loop.index0 }}">Delete</a>
-        <hr>
-        <div style="text-align: center; margin-top: 30px;">
+        {% if item.coverPath %}
+        <div class="itemImage">
+            <img src="{{ url_for('static', filename='uploads/' + item.coverPath) }}" 
+                 alt="Album Cover" 
+                 class="albumPreview">
+        </div>
+        {% endif %}
     </div>
     {% endfor %}
    
     <div class="buttonContainer">
-    <a href="/" class="buttons small">BACK TO HOME</a>
+        <a href="/" class="buttons small">BACK TO HOME</a>
     </div>
-
 {% endblock %}
