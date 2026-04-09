@@ -13,9 +13,9 @@
             <p><strong>Review:</strong> {{ item.review }}</p>
             </div>
 
-        {% if item.coverPath %}
+        {% if item.cover %}
         <div class="itemImage">
-            <img src="{{ url_for('static', filename='uploads/' + item.coverPath) }}" 
+            <img src="{{ url_for('static', filename='uploads/' + item.cover) }}" 
                  alt="Album Cover" 
                  class="albumPreview">
         </div>

@@ -45,7 +45,7 @@ def add():
 
         if albumCover and allowed_file(albumCover.filename):
             fileName = secure_filename(albumCover.filename)
-            albumCover.save(os.path.join(app.config['UPLOAD_FOLDER'], fileName))    
+            albumCover.save(os.path.join(app.config['UPLOAD_FOLDER'], fileName)) 
         
         newItem = {'title': request.form['title'],
             'artist': request.form['artist'],
