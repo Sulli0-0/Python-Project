@@ -3,6 +3,10 @@
 {% block content %}
     <h1>My Music Collection</h1>
     
+    {% if not items %}
+        <p class="desc" style="text-align: center;">Your collection is currently empty.</p>
+    {% endif %}
+
     {% for item in items %}
     <div class="item">
         <div class="itemInfo">
@@ -11,15 +15,15 @@
             <p><strong>Genre:</strong> {{ item.genre }}</p>
             <p><strong>Rating:</strong> {{ item.rating }}/10</p>
             <p><strong>Review:</strong> {{ item.review }}</p>
-            </div>
-
-        {% if item.cover %}
-        <div class="itemImage">
-            <img src="{{ url_for('static', filename='uploads/' + item.cover) }}" 
-                 alt="Album Cover" 
-                 class="albumPreview">
         </div>
-        {% endif %}
+
+        <div class="itemImage">
+            {% if item.cover %}
+                <img src="{{ url_for('static', filename='uploads/' + item.cover) }}" alt="Album Cover" class="albumPreview">
+            {% else %}
+                <img src="{{ url_for('static', filename='disc.webp') }}" alt="No Cover" class="albumPreview">
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
    

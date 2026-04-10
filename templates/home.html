@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1>Lucas's Music Reviews</h1>
-    <p class = "desc">USE THIS APP TO KEEP TRACK OF YOUR FAVORITE SONGS!</p>
-    <p class = "desc">BE THE MUSIC CRITIC YOU WERE MEANT TO BE!</p>
+    <p class="desc">USE THIS APP TO KEEP TRACK OF YOUR FAVORITE SONGS!</p>
+    <p class="desc">BE THE MUSIC CRITIC YOU WERE MEANT TO BE!</p>
 
-    <div class = "layout">
-        <div class = "bio">
+    <div class="layout">
+        <div class="bio">
             <h2>About this App</h2>
             <p>Hi! My name is Lucas Sullivan. I am currently a 23 year old Software Development student (as of April, 2026).
                 I have a lot of passions in life, but music may be one of the most important to me. Music was always super prevelant
@@ -18,6 +18,9 @@
      <div class="requestBoard">
             <h2>TO-LISTEN-TO LATER!</h2>
             <div class="requestDisplay">
+                {% if not notes %}
+                    <p class="requestItem">> No songs added yet!</p>
+                {% endif %}
                 {% for note in notes %}
                     <p class="requestItem">> {{ note }}</p> 
                 {% endfor %}
